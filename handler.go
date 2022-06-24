@@ -28,12 +28,7 @@ var tag2 = &t2
 var t3 = "groceries"
 var tag3 = &t3
 
-var notes = Notes{
-	{Message: message1, Tag: tag1},
-	{Message: message2, Tag: tag2},
-	{Message: message3, Tag: tag3},
-	{Message: message4},
-}
+var notes = Notes{}
 
 func GetAllNotes(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("get all notes called")
@@ -48,9 +43,9 @@ func GetNoteByTag(w http.ResponseWriter, r *http.Request) {
 	tag := r.URL.Query().Get("tag")
 	fmt.Printf("get note by tag %s called\n", tag)
 
-	var noteByTag Notes
+	var noteByTag = make(Notes, 0)
 	for _, note := range notes {
-		if note.Tag == &tag {
+		if note.Tag != nil && *(note.Tag) == tag {
 			noteByTag = append(noteByTag, note)
 		}
 	}
