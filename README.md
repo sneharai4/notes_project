@@ -22,24 +22,26 @@ The server should implement a single endpoint, /notes, for the POST and GET oper
 ## Here are curl examples of the API usage:
 
 ### adding a note:
-curl -X POST http://localhost:4000/notes -H 'Content-Type:
-application/json' -d '{"message": "Buy apples and oranges", "tag": "groceries"}'
+`curl -X POST http://localhost:4000/notes -H 'Content-Type:
+application/json' -d '{"message": "Buy apples and oranges", "tag": "groceries"}'`
 
 ### getting notes with the "groceries" tag:
 curl http://localhost:4000/notes?tag=groceries
-[{"message": "Buy apples and oranges", "tag": "groceries"}]
+
+`[{"message": "Buy apples and oranges", "tag": "groceries"}]`
 
 ### getting all notes
 curl http://localhost:4000/notes
-[{"message": "Buy apples and oranges", "tag": "groceries"}, {"message": "Feed the cat"}]
+
+`[{"message": "Buy apples and oranges", "tag": "groceries"}, {"message": "Feed the cat"}]`
 
 
 ## Building the project
 
 - Clone the repo : git clone <https://github.com/sneharai4/notes_project.git>
 - cd to notes_project
-- Set GOPATH, as go binaries are placed under $(GOPATH)/bin which is added to $(PATH)
-- Run go build
+- Set GOPATH, as go binaries are placed under `$(GOPATH)/bin` which is added to `$(PATH)`
+- Run `go build`
 - Run the binary created by go build. This will start the REST API Server
 
 Note: Minimum go version of 1.17 required.
