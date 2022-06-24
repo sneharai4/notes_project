@@ -29,6 +29,20 @@ application/json' -d '{"message": "Buy apples and oranges", "tag": "groceries"}'
 curl http://localhost:4000/notes?tag=groceries
 [{"message": "Buy apples and oranges", "tag": "groceries"}]
 
-# getting all notes
+### getting all notes
 curl http://localhost:4000/notes
 [{"message": "Buy apples and oranges", "tag": "groceries"}, {"message": "Feed the cat"}]
+
+
+## Building the project
+
+- Clone the repo : git clone <https://github.com/sneharai4/notes_project.git>
+- cd to notes_project
+- Set GOPATH, as go binaries are placed under $(GOPATH)/bin which is added to $(PATH)
+- Run go build
+- Run the binary created by go build. This will start the REST API Server
+
+Note: Minimum go version of 1.17 required.
+
+
+
