@@ -5,6 +5,7 @@ We are going to build a REST API server with following HTTP Endpoints and Method
 
 The server will store and return notes. It will work with the JSON representation of the notes.
 A note has two fields: message, and an optional tag. Here are two examples:
+
 { "message": "Buy apples and oranges", "tag": "groceries"}
 { "message": "Feed the cat"}
 
